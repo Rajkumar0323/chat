@@ -91,15 +91,15 @@ app.post("/visitor-entry", (req, res) => {
       if (err) return res.status(500).json({ error: err.message });
 
       // Notify the owner
-      if (ownerSockets[ownerId]) {
-        io.to(ownerSockets[ownerId]).emit("newVisitor", {
-          ownerId,
-          reason,
-          image:capturedImage,
-          date,
+      // if (ownerSockets[ownerId]) {
+      //   io.to(ownerSockets[ownerId]).emit("newVisitor", {
+      //     ownerId,
+      //     reason,
+      //     image:capturedImage,
+      //     date,
           
-        });
-      }
+      //   });
+      // }
 
       res.status(201).json({ message: "Visitor recorded" });
     }
