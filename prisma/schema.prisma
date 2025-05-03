@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model help_request {
+  help_id     BigInt    @id @default(autoincrement())
+  description String?   @db.VarChar(255)
+  latitude    Float
+  longitude   Float
+  seeker_id   Int
+  timestamp   DateTime? @db.DateTime(6)
+  title       String?   @db.VarChar(255)
+}
+
+model owners {
+  id       BigInt  @id @unique(map: "id") @default(autoincrement()) @db.UnsignedBigInt
+  name     String? @db.Text
+  mobile   String? @db.Text
+  email    String  @db.Text
+  address  String? @db.Text
+  password String? @db.Text
+}
+
+model visitors {
+  id       BigInt  @id @unique(map: "id") @default(autoincrement()) @db.UnsignedBigInt
+  owner_id String? @db.Text
+  image    String? @db.Text
+  reason   String? @db.Text
+  date     String? @db.Text
+}

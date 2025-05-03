@@ -1,0 +1,44 @@
+backend/
+│
+├── controllers/
+│   ├── auth.controller.js        # signup, login, email verification, forgot/reset password
+│   └── visitor.controller.js     # visitor entry, get visitors
+│
+├── routes/
+│   ├── auth.routes.js
+│   └── visitor.routes.js
+│
+├── services/ 
+│   └── email.service.js          # nodemailer logic
+│
+├── prisma/
+│   └── schema.prisma             # Prisma schema
+│
+├── utils/
+│   └── otp.js                    # OTP generator
+│
+├── index.js                      # app entry point
+└── .env
+
+/backend
+│
+├── controllers/
+│   ├── auth.controller.js
+│   └── visitor.controller.js
+│
+├── routes/
+│   ├── auth.routes.js
+│   └── visitor.routes.js
+│
+├── services/
+│   ├── email.service.js
+│   └── socket.service.js
+│
+├── prisma/
+│   └── client.js
+│
+├── utils/
+│   └── otp.js
+│
+├── index.js          <-- Main entry file
+└── .env
