@@ -177,6 +177,14 @@ const config = {
         "fromEnvVar": null,
         "value": "windows",
         "native": true
+      },
+      {
+        "fromEnvVar": null,
+        "value": "windows"
+      },
+      {
+        "fromEnvVar": null,
+        "value": "debian-openssl-3.0.x"
       }
     ],
     "previewFeatures": [],
@@ -184,7 +192,7 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../.env",
+    "rootEnvPath": null,
     "schemaEnvPath": "../../.env"
   },
   "relativePath": "../../prisma",
@@ -203,8 +211,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"mysql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel help_request {\n  help_id     BigInt    @id @default(autoincrement())\n  description String?   @db.VarChar(255)\n  latitude    Float\n  longitude   Float\n  seeker_id   Int\n  timestamp   DateTime? @db.DateTime(6)\n  title       String?   @db.VarChar(255)\n}\n\nmodel owners {\n  id       BigInt  @id @unique(map: \"id\") @default(autoincrement()) @db.UnsignedBigInt\n  name     String? @db.Text\n  mobile   String? @db.Text\n  email    String  @db.Text\n  address  String? @db.Text\n  password String? @db.Text\n}\n\nmodel visitors {\n  id       BigInt  @id @unique(map: \"id\") @default(autoincrement()) @db.UnsignedBigInt\n  owner_id String? @db.Text\n  image    String? @db.Text\n  reason   String? @db.Text\n  date     String? @db.Text\n}\n",
-  "inlineSchemaHash": "7ae84b9be3921ca80bb1c421d072935891a61f56ee240e57d649951c4a35acc4",
+  "inlineSchema": "generator client {\n  provider      = \"prisma-client-js\"\n  output        = \"../generated/prisma\"\n  binaryTargets = [\"native\", \"windows\", \"debian-openssl-3.0.x\"]\n}\n\ndatasource db {\n  provider = \"mysql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel help_request {\n  help_id     BigInt    @id @default(autoincrement())\n  description String?   @db.VarChar(255)\n  latitude    Float\n  longitude   Float\n  seeker_id   Int\n  timestamp   DateTime? @db.DateTime(6)\n  title       String?   @db.VarChar(255)\n}\n\nmodel owners {\n  id       BigInt  @id @unique(map: \"id\") @default(autoincrement()) @db.UnsignedBigInt\n  name     String? @db.Text\n  mobile   String? @db.Text\n  email    String  @db.Text\n  address  String? @db.Text\n  password String? @db.Text\n}\n\nmodel visitors {\n  id       BigInt  @id @unique(map: \"id\") @default(autoincrement()) @db.UnsignedBigInt\n  owner_id String? @db.Text\n  image    String? @db.Text\n  reason   String? @db.Text\n  date     String? @db.Text\n}\n",
+  "inlineSchemaHash": "ea9a390b791720f71287b521012d00a5838c00d5e8e77ffbab7eb8030a196e58",
   "copyEngine": true
 }
 config.dirname = '/'
