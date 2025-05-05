@@ -24,8 +24,17 @@ export const getVisitors = async (req, res) => {
       orderBy: { id: "desc" },
     });
 
-    res.json(visitors);
+    // Convert BigInt to string for safe JSON serialization
+    const safeVisitors = JSON.parse(
+      JSON.stringify(visitors, (_, value) =>
+        typeof value === "bigint" ? value.toString() : value
+      )
+    );
+
+    res.json(safeVisitors);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.log("Error", err);
+
+    res.status(500).json({ error: err.message || "Something went wrong" });
   }
 };
