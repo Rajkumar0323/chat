@@ -9,7 +9,13 @@ export const addVisitor = async (req, res) => {
       data: { owner_id: ownerId, reason, image: capturedImage, date },
     });
 
-    res.status(201).json({ message: "Visitor recorded", visitor: newVisitor });
+    const safeVisitor = JSON.parse(
+      JSON.stringify(newVisitor, (_, value) =>
+        typeof value === "bigint" ? value.toString() : value
+      )
+    );
+
+    res.status(201).json({ message: "Visitor recorded", visitor: safeVisitor });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
