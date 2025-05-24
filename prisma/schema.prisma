@@ -35,4 +35,5 @@ model visitors {
   image    String? @db.Text
   reason   String? @db.Text
   date     String? @db.Text
+  permission String? @db.Text
 }

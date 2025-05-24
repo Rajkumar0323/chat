@@ -30,7 +30,17 @@ export default function handleSocketEvents(io) {
       }
     });
 
-    socket.on("ownerResponse", (data) => {
+    socket.on("ownerResponse", async (data) => {
+      const { socketId, status, visitorId } = data;
+
+      await prisma.visitors.update({
+        where: {
+          id: BigInt(visitorId),
+        },
+        data: {
+          permission: status,
+        },
+      });
       io.to(data.socketId).emit("visitorResponse", data);
       delete currentBusyOwner[data.ownerId];
     });

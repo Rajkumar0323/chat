@@ -2930,6 +2930,7 @@ export namespace Prisma {
     image: string | null
     reason: string | null
     date: string | null
+    permission: string | null
   }
 
   export type VisitorsMaxAggregateOutputType = {
@@ -2938,6 +2939,7 @@ export namespace Prisma {
     image: string | null
     reason: string | null
     date: string | null
+    permission: string | null
   }
 
   export type VisitorsCountAggregateOutputType = {
@@ -2946,6 +2948,7 @@ export namespace Prisma {
     image: number
     reason: number
     date: number
+    permission: number
     _all: number
   }
 
@@ -2964,6 +2967,7 @@ export namespace Prisma {
     image?: true
     reason?: true
     date?: true
+    permission?: true
   }
 
   export type VisitorsMaxAggregateInputType = {
@@ -2972,6 +2976,7 @@ export namespace Prisma {
     image?: true
     reason?: true
     date?: true
+    permission?: true
   }
 
   export type VisitorsCountAggregateInputType = {
@@ -2980,6 +2985,7 @@ export namespace Prisma {
     image?: true
     reason?: true
     date?: true
+    permission?: true
     _all?: true
   }
 
@@ -3075,6 +3081,7 @@ export namespace Prisma {
     image: string | null
     reason: string | null
     date: string | null
+    permission: string | null
     _count: VisitorsCountAggregateOutputType | null
     _avg: VisitorsAvgAggregateOutputType | null
     _sum: VisitorsSumAggregateOutputType | null
@@ -3102,6 +3109,7 @@ export namespace Prisma {
     image?: boolean
     reason?: boolean
     date?: boolean
+    permission?: boolean
   }, ExtArgs["result"]["visitors"]>
 
 
@@ -3112,9 +3120,10 @@ export namespace Prisma {
     image?: boolean
     reason?: boolean
     date?: boolean
+    permission?: boolean
   }
 
-  export type visitorsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "owner_id" | "image" | "reason" | "date", ExtArgs["result"]["visitors"]>
+  export type visitorsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "owner_id" | "image" | "reason" | "date" | "permission", ExtArgs["result"]["visitors"]>
 
   export type $visitorsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "visitors"
@@ -3125,6 +3134,7 @@ export namespace Prisma {
       image: string | null
       reason: string | null
       date: string | null
+      permission: string | null
     }, ExtArgs["result"]["visitors"]>
     composites: {}
   }
@@ -3499,6 +3509,7 @@ export namespace Prisma {
     readonly image: FieldRef<"visitors", 'String'>
     readonly reason: FieldRef<"visitors", 'String'>
     readonly date: FieldRef<"visitors", 'String'>
+    readonly permission: FieldRef<"visitors", 'String'>
   }
     
 
@@ -3864,7 +3875,8 @@ export namespace Prisma {
     owner_id: 'owner_id',
     image: 'image',
     reason: 'reason',
-    date: 'date'
+    date: 'date',
+    permission: 'permission'
   };
 
   export type VisitorsScalarFieldEnum = (typeof VisitorsScalarFieldEnum)[keyof typeof VisitorsScalarFieldEnum]
@@ -3909,7 +3921,8 @@ export namespace Prisma {
     owner_id: 'owner_id',
     image: 'image',
     reason: 'reason',
-    date: 'date'
+    date: 'date',
+    permission: 'permission'
   };
 
   export type visitorsOrderByRelevanceFieldEnum = (typeof visitorsOrderByRelevanceFieldEnum)[keyof typeof visitorsOrderByRelevanceFieldEnum]
@@ -4092,6 +4105,7 @@ export namespace Prisma {
     image?: StringNullableFilter<"visitors"> | string | null
     reason?: StringNullableFilter<"visitors"> | string | null
     date?: StringNullableFilter<"visitors"> | string | null
+    permission?: StringNullableFilter<"visitors"> | string | null
   }
 
   export type visitorsOrderByWithRelationInput = {
@@ -4100,6 +4114,7 @@ export namespace Prisma {
     image?: SortOrderInput | SortOrder
     reason?: SortOrderInput | SortOrder
     date?: SortOrderInput | SortOrder
+    permission?: SortOrderInput | SortOrder
     _relevance?: visitorsOrderByRelevanceInput
   }
 
@@ -4112,6 +4127,7 @@ export namespace Prisma {
     image?: StringNullableFilter<"visitors"> | string | null
     reason?: StringNullableFilter<"visitors"> | string | null
     date?: StringNullableFilter<"visitors"> | string | null
+    permission?: StringNullableFilter<"visitors"> | string | null
   }, "id" | "id">
 
   export type visitorsOrderByWithAggregationInput = {
@@ -4120,6 +4136,7 @@ export namespace Prisma {
     image?: SortOrderInput | SortOrder
     reason?: SortOrderInput | SortOrder
     date?: SortOrderInput | SortOrder
+    permission?: SortOrderInput | SortOrder
     _count?: visitorsCountOrderByAggregateInput
     _avg?: visitorsAvgOrderByAggregateInput
     _max?: visitorsMaxOrderByAggregateInput
@@ -4136,6 +4153,7 @@ export namespace Prisma {
     image?: StringNullableWithAggregatesFilter<"visitors"> | string | null
     reason?: StringNullableWithAggregatesFilter<"visitors"> | string | null
     date?: StringNullableWithAggregatesFilter<"visitors"> | string | null
+    permission?: StringNullableWithAggregatesFilter<"visitors"> | string | null
   }
 
   export type help_requestCreateInput = {
@@ -4277,6 +4295,7 @@ export namespace Prisma {
     image?: string | null
     reason?: string | null
     date?: string | null
+    permission?: string | null
   }
 
   export type visitorsUncheckedCreateInput = {
@@ -4285,6 +4304,7 @@ export namespace Prisma {
     image?: string | null
     reason?: string | null
     date?: string | null
+    permission?: string | null
   }
 
   export type visitorsUpdateInput = {
@@ -4293,6 +4313,7 @@ export namespace Prisma {
     image?: NullableStringFieldUpdateOperationsInput | string | null
     reason?: NullableStringFieldUpdateOperationsInput | string | null
     date?: NullableStringFieldUpdateOperationsInput | string | null
+    permission?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type visitorsUncheckedUpdateInput = {
@@ -4301,6 +4322,7 @@ export namespace Prisma {
     image?: NullableStringFieldUpdateOperationsInput | string | null
     reason?: NullableStringFieldUpdateOperationsInput | string | null
     date?: NullableStringFieldUpdateOperationsInput | string | null
+    permission?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type visitorsCreateManyInput = {
@@ -4309,6 +4331,7 @@ export namespace Prisma {
     image?: string | null
     reason?: string | null
     date?: string | null
+    permission?: string | null
   }
 
   export type visitorsUpdateManyMutationInput = {
@@ -4317,6 +4340,7 @@ export namespace Prisma {
     image?: NullableStringFieldUpdateOperationsInput | string | null
     reason?: NullableStringFieldUpdateOperationsInput | string | null
     date?: NullableStringFieldUpdateOperationsInput | string | null
+    permission?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type visitorsUncheckedUpdateManyInput = {
@@ -4325,6 +4349,7 @@ export namespace Prisma {
     image?: NullableStringFieldUpdateOperationsInput | string | null
     reason?: NullableStringFieldUpdateOperationsInput | string | null
     date?: NullableStringFieldUpdateOperationsInput | string | null
+    permission?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type BigIntFilter<$PrismaModel = never> = {
@@ -4607,6 +4632,7 @@ export namespace Prisma {
     image?: SortOrder
     reason?: SortOrder
     date?: SortOrder
+    permission?: SortOrder
   }
 
   export type visitorsAvgOrderByAggregateInput = {
@@ -4619,6 +4645,7 @@ export namespace Prisma {
     image?: SortOrder
     reason?: SortOrder
     date?: SortOrder
+    permission?: SortOrder
   }
 
   export type visitorsMinOrderByAggregateInput = {
@@ -4627,6 +4654,7 @@ export namespace Prisma {
     image?: SortOrder
     reason?: SortOrder
     date?: SortOrder
+    permission?: SortOrder
   }
 
   export type visitorsSumOrderByAggregateInput = {

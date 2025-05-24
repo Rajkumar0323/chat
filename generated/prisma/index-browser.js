@@ -144,7 +144,8 @@ exports.Prisma.VisitorsScalarFieldEnum = {
   owner_id: 'owner_id',
   image: 'image',
   reason: 'reason',
-  date: 'date'
+  date: 'date',
+  permission: 'permission'
 };
 
 exports.Prisma.SortOrder = {
@@ -174,7 +175,8 @@ exports.Prisma.visitorsOrderByRelevanceFieldEnum = {
   owner_id: 'owner_id',
   image: 'image',
   reason: 'reason',
-  date: 'date'
+  date: 'date',
+  permission: 'permission'
 };
 
 

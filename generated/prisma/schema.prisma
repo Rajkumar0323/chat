@@ -29,9 +29,10 @@ model owners {
 }
 
 model visitors {
-  id       BigInt  @id @unique(map: "id") @default(autoincrement()) @db.UnsignedBigInt
-  owner_id String? @db.Text
-  image    String? @db.Text
-  reason   String? @db.Text
-  date     String? @db.Text
+  id         BigInt  @id @unique(map: "id") @default(autoincrement()) @db.UnsignedBigInt
+  owner_id   String? @db.Text
+  image      String? @db.Text
+  reason     String? @db.Text
+  date       String? @db.Text
+  permission String? @db.Text
 }
